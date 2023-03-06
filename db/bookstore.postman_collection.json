@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "661e1dad-19fb-4eda-b873-a2accc728761",
+		"name": "bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "Get All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/books?per_page=2&page=2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book Details - Book ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Book {Token}",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJhZG1pbl9pZCI6NX0.9G_a5q5JM1C7VD99aAo3sAij4ltybjYas-dt_7nPFB4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"book\": {\n    \"name\": \"The Catcher in the Rye\",\n    \"author\": \"J.D. Salinger\",\n    \"price\": 700.00,\n    \"ISBN\": \"978-3-16-148410-0\",\n    \"quantity_available\": 0\n  }\n}\n"
+						},
+						"url": {
+							"raw": "{{local}}/books",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book Details - Book ID {Token}",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJhZG1pbl9pZCI6NX0.9G_a5q5JM1C7VD99aAo3sAij4ltybjYas-dt_7nPFB4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"book\": {\n    \"name\": \"The Catcher in the Rye\",\n    \"author\": \"J.D. Salinger\",\n    \"price\": 700.00,\n    \"ISBN\": \"978-3-16-148410-0\",\n    \"quantity_available\": 21\n  }\n}\n"
+						},
+						"url": {
+							"raw": "{{local}}/books/34",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"books",
+								"34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book - Book ID {Token}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJhZG1pbl9pZCI6NX0.9G_a5q5JM1C7VD99aAo3sAij4ltybjYas-dt_7nPFB4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/books/34",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"books",
+								"34"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admins",
+			"item": [
+				{
+					"name": "Create New Admin Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Nitin\",\n  \"email\": \"nitin@gmail.com\",\n  \"password\": \"secretpassword\",\n  \"password_confirmation\": \"secretpassword\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost/admins",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"secretpassword\"\n}\n"
+						},
+						"url": {
+							"raw": "{{local}}/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Details {Token}",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJhZG1pbl9pZCI6NX0.9G_a5q5JM1C7VD99aAo3sAij4ltybjYas-dt_7nPFB4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"admin\": {\n  \"name\": \"John\",\n  \"email\": \"john.doe@gmail.com\",\n  \"password\": \"secretpassword\",\n  \"password_confirmation\": \"secretpassword\"\n}\n}\n"
+						},
+						"url": {
+							"raw": "{{local}}/admins/5",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"admins",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:3000"
+		}
+	]
+}
