@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   resources :books
-  # get '/books/:id', to: 'books#show'
+  resources :admins
 end
