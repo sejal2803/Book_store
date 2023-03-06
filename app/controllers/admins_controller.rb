@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  skip_before_action :authenticate_request, only: [:create]
 
   # POST /admins
   # Create a new admin
@@ -14,9 +15,7 @@ class AdminsController < ApplicationController
   # PATCH/admins/:id
   # Update Existed Admin
   def update
-    debugger
     @admin = Admin.find(params[:id])
-    debugger
     if @admin.update(admin_params)
       render json: { message: 'Admin details updated successfully' }, status: :ok
     else
