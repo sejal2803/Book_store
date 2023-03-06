@@ -15,6 +15,10 @@ gem "pg"
 # Faker gem for generating random fake data for testing and seeding
 gem 'faker'
 
+# Will Paginate nad kaminari gem for adding pagination to views
+gem 'will_paginate', '~> 3.3.0'
+gem 'kaminari'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
