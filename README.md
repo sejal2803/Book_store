@@ -5,20 +5,31 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Need to take a git clone 
+  ``
 
-* System dependencies
+* Go to project directory
 
-* Configuration
+* Run the command
+  `bundle install`
 
-* Database creation
+* Create the database
+  `rake db:create`
 
-* Database initialization
+* Run the migration and seed for creating the table and there data
+  `rake db:migrate db:seed`
 
-* How to run the test suite
+* Run the rails server
+  `rails server`
 
-* Services (job queues, cache servers, search engines, etc.)
+* `bookstore.postman_collection.json` this is the collection for all the API's. You just need to import it
+Note: - `bookstore.postman_collection.json` present in db directory
+      - Firstly you need to hit the `create new admin account` api.
+      - After that need to hit the `admin login` api. So you will get the token, 
+      - Then you just pass this token in the header section(Key = Authorization) of all the API's except the `get` request.
 
-* Deployment instructions
+* Run all the test cases 
+  `rspec`
 
-* ...
+* If you want to check the coverage of the test cases
+  `google-chrome coverage/index.html`
