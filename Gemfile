@@ -12,6 +12,9 @@ gem "sprockets-rails"
 # Use pg as the database for Active Record
 gem "pg"
 
+# Faker gem for generating random fake data for testing and seeding
+gem 'faker'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
